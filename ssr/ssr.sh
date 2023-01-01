@@ -26,7 +26,7 @@ echo -e "${NC}${LIGHT}Telegram : https://t.me/Akbar218"
 exit 0
 fi
 # Link Hosting Kalian
-akbarvpn="raw.githubusercontent.com/senowahyu62/scriptvps/main/ssr"
+mahboub="raw.githubusercontent.com/Romba89/vpspluss/main/ssr"
 
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
@@ -151,7 +151,7 @@ if [[ ${OS} == "centos" ]]; then
 }
 Start_SSR(){
 	check_pid
-	wget -O /etc/init.d/ssrmu "https://${akbarvpn}/ssrmu"
+	wget -O /etc/init.d/ssrmu "https://${mahboub}/ssrmu"
 	/etc/init.d/ssrmu start
 }
 Install_SSR(){
@@ -167,9 +167,9 @@ Save_iptables
 Start_SSR
 }
 Install_SSR
-wget -O /usr/bin/ssr https://${akbarvpn}/ssrmu.sh && chmod +x /usr/bin/ssr
-wget -O /usr/bin/addssr https://${akbarvpn}/addssr.sh && chmod +x /usr/bin/addssr
-wget -O /usr/bin/delssr https://${akbarvpn}/delssr.sh && chmod +x /usr/bin/delssr
-wget -O /usr/bin/renewssr https://${akbarvpn}/renewssr.sh && chmod +x /usr/bin/renewssr
+wget -O /usr/bin/ssr https://${mahboub}/ssrmu.sh && chmod +x /usr/bin/ssr
+wget -O /usr/bin/addssr https://${mahboub}/addssr.sh && chmod +x /usr/bin/addssr
+wget -O /usr/bin/delssr https://${mahboub}/delssr.sh && chmod +x /usr/bin/delssr
+wget -O /usr/bin/renewssr https://${mahboub}/renewssr.sh && chmod +x /usr/bin/renewssr
 touch /usr/local/shadowsocksr/akun.conf
 rm -f /root/ssr.sh

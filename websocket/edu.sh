@@ -27,10 +27,10 @@ echo -e "${NC}${LIGHT}Telegram : https://t.me/Akbar218"
 exit 0
 fi
 # Link Hosting Kalian
-mahboub="raw.githubusercontent.com/Romba89/vpspluss/main/websocket"
+akbarvpn="raw.githubusercontent.com/Romba89/vpspluss/main/websocket"
 
 # Getting Proxy Template
-wget -q -O /usr/local/bin/ws-nontls https://${mahboub}/websocket.py
+wget -q -O /usr/local/bin/ws-nontls https://${akbarvpn}/websocket.py
 chmod +x /usr/local/bin/ws-nontls
 
 # Installing Service
@@ -58,7 +58,7 @@ systemctl enable ws-nontls
 systemctl restart ws-nontls
 
 # Getting Proxy Template
-wget -q -O /usr/local/bin/ws-ovpn https://${mahboub}/ws-ovpn.py
+wget -q -O /usr/local/bin/ws-ovpn https://${akbarvpn}/ws-ovpn.py
 chmod +x /usr/local/bin/ws-ovpn
 
 # Installing Service
@@ -86,7 +86,7 @@ systemctl enable ws-ovpn
 systemctl restart ws-ovpn
 
 # Getting Proxy Template
-wget -q -O /usr/local/bin/ws-tls https://${mahboub}/ws-tls
+wget -q -O /usr/local/bin/ws-tls https://${akbarvpn}/ws-tls
 chmod +x /usr/local/bin/ws-tls
 
 # Installing Service

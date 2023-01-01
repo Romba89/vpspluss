@@ -28,7 +28,7 @@ fi
 # By Akbar Maulana
 # ==================================================
 # Link Hosting Kalian
-mahboub="raw.githubusercontent.com/Romba89/vpspluss/main/ssh"
+akbarvpn="raw.githubusercontent.com/Romba89/vpspluss/main/ssh"
 
 # initialisasi var
 export DEBIAN_FRONTEND=noninteractive
@@ -42,7 +42,7 @@ apt install openvpn easy-rsa unzip -y
 apt install openssl iptables iptables-persistent -y
 mkdir -p /etc/openvpn/server/easy-rsa/
 cd /etc/openvpn/
-wget https://${mahboub}/vpn.zip
+wget https://${akbarvpn}/vpn.zip
 unzip vpn.zip
 rm -f vpn.zip
 chown -R root:root /etc/openvpn/server/easy-rsa/

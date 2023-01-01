@@ -14,11 +14,11 @@ LIGHT='\033[0;37m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
 # Link Hosting Kalian
-akbarvpn="raw.githubusercontent.com/senowahyu62/scriptvps/main/backup"
+mahboub="raw.githubusercontent.com/Romba89/vpspluss/main/backup"
 
 apt install rclone -y
 printf "q\n" | rclone config
-wget -O /root/.config/rclone/rclone.conf "https://${akbarvpn}/rclone.conf"
+wget -O /root/.config/rclone/rclone.conf "https://${mahboub}/rclone.conf"
 git clone  https://github.com/magnific0/wondershaper.git
 cd wondershaper
 make install
@@ -43,11 +43,11 @@ logfile ~/.msmtp.log
 EOF
 chown -R www-data:www-data /etc/msmtprc
 cd /usr/bin
-wget -O autobackup "https://${akbarvpn}/autobackup.sh"
-wget -O backup "https://${akbarvpn}/backup.sh"
-wget -O restore "https://${akbarvpn}/restore.sh"
-wget -O strt "https://${akbarvpn}/strt.sh"
-wget -O limitspeed "https://${akbarvpn}/limitspeed.sh"
+wget -O autobackup "https://${mahboub}/autobackup.sh"
+wget -O backup "https://${mahboub}/backup.sh"
+wget -O restore "https://${mahboub}/restore.sh"
+wget -O strt "https://${mahboub}/strt.sh"
+wget -O limitspeed "https://${mahboub}/limitspeed.sh"
 chmod +x autobackup
 chmod +x backup
 chmod +x restore

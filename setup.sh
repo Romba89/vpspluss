@@ -19,25 +19,25 @@ CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 # ==========================================
 # Link Hosting Kalian Untuk Ssh Vpn
-mahboub="https://raw.githubusercontent.com/Romba89/vpspluss/main/ssh"
+akbarvpn="raw.githubusercontent.com/Romba89/vpspluss/main/ssh"
 # Link Hosting Kalian Untuk Sstp
-mahboub="https://raw.githubusercontent.com/Romba89/vpspluss/main/sstp"
+akbarvpnn="raw.githubusercontent.com/Romba89/vpspluss/main/sstp"
 # Link Hosting Kalian Untuk Ssr
-mahboub="https://raw.githubusercontent.com/Romba89/vpspluss/main/ssr"
+akbarvpnnn="raw.githubusercontent.com/Romba89/vpspluss/main/ssr"
 # Link Hosting Kalian Untuk Shadowsocks
-mahboub="https://raw.githubusercontent.com/Romba89/vpspluss/main/shadowsocks"
+akbarvpnnnn="raw.githubusercontent.com/Romba89/vpspluss/main/shadowsocks"
 # Link Hosting Kalian Untuk Wireguard
-mahboub="https://raw.githubusercontent.com/Romba89/vpspluss/main/wireguard"
+akbarvpnnnnn="raw.githubusercontent.com/Romba89/vpspluss/main/wireguard"
 # Link Hosting Kalian Untuk Xray
-mahboub="https://raw.githubusercontent.com/Romba89/vpspluss/main/xray"
+akbarvpnnnnnn="raw.githubusercontent.com/Romba89/vpspluss/main/xray"
 # Link Hosting Kalian Untuk Ipsec
-mahboub="https://raw.githubusercontent.com/Romba89/vpspluss/main/ipsec"
+akbarvpnnnnnnn="raw.githubusercontent.com/Romba89/vpspluss/main/ipsec"
 # Link Hosting Kalian Untuk Backup
-mahboub="https://raw.githubusercontent.com/Romba89/vpspluss/main/backup"
+akbarvpnnnnnnnn="raw.githubusercontent.com/Romba89/vpspluss/main/backup"
 # Link Hosting Kalian Untuk Websocket
-mahboub="https://raw.githubusercontent.com/Romba89/vpspluss/main/websocket"
+akbarvpnnnnnnnnn="raw.githubusercontent.com/Romba89/vpspluss/main/websocket"
 # Link Hosting Kalian Untuk Ohp
-mahboub="https://raw.githubusercontent.com/Romba89/vpspluss/main/ohp"
+akbarvpnnnnnnnnnn="raw.githubusercontent.com/Romba89/vpspluss/main/ohp"
 
 # Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
@@ -52,24 +52,24 @@ exit 0
 fi
 mkdir /var/lib/akbarstorevpn;
 echo "IP=" >> /var/lib/akbarstorevpn/ipvps.conf
-wget https://${mahboub}/cf.sh && chmod +x cf.sh && ./cf.sh
+wget https://${akbarvpn}/cf.sh && chmod +x cf.sh && ./cf.sh
 #install v2ray
-wget https://${mahboub}/ins-xray.sh && chmod +x ins-xray.sh && screen -S xray ./ins-xray.sh
+wget https://${akbarvpnnnnnn}/ins-xray.sh && chmod +x ins-xray.sh && screen -S xray ./ins-xray.sh
 #install ssh ovpn
-wget https://${mahboub}/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
-wget https://${mahboub}/sstp.sh && chmod +x sstp.sh && screen -S sstp ./sstp.sh
+wget https://${akbarvpn}/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
+wget https://${akbarvpnn}/sstp.sh && chmod +x sstp.sh && screen -S sstp ./sstp.sh
 #install ssr
-wget https://${mahboub}/ssr.sh && chmod +x ssr.sh && screen -S ssr ./ssr.sh
-wget https://${mahboub}/sodosok.sh && chmod +x sodosok.sh && screen -S ss ./sodosok.sh
+wget https://${akbarvpnnn}/ssr.sh && chmod +x ssr.sh && screen -S ssr ./ssr.sh
+wget https://${akbarvpnnnn}/sodosok.sh && chmod +x sodosok.sh && screen -S ss ./sodosok.sh
 #installwg
-wget https://${mahboub}/wg.sh && chmod +x wg.sh && screen -S wg ./wg.sh
+wget https://${akbarvpnnnnn}/wg.sh && chmod +x wg.sh && screen -S wg ./wg.sh
 #install L2TP
-wget https://${mahboub}/ipsec.sh && chmod +x ipsec.sh && screen -S ipsec ./ipsec.sh
-wget https://${mahboub}/set-br.sh && chmod +x set-br.sh && ./set-br.sh
+wget https://${akbarvpnnnnnnn}/ipsec.sh && chmod +x ipsec.sh && screen -S ipsec ./ipsec.sh
+wget https://${akbarvpnnnnnnnn}/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 # Websocket
-wget https://${mahboub}/edu.sh && chmod +x edu.sh && ./edu.sh
+wget https://${akbarvpnnnnnnnnn}/edu.sh && chmod +x edu.sh && ./edu.sh
 # Ohp Server
-wget https://${mahboub}/ohp.sh && chmod +x ohp.sh && ./ohp.sh
+wget https://${akbarvpnnnnnnnnnn}/ohp.sh && chmod +x ohp.sh && ./ohp.sh
 
 rm -f /root/ssh-vpn.sh
 rm -f /root/sstp.sh
@@ -96,7 +96,7 @@ WantedBy=multi-user.target
 EOF
 systemctl daemon-reload
 systemctl enable autosett
-wget -O /etc/set.sh "https://${mahboub}/set.sh"
+wget -O /etc/set.sh "https://${akbarvpn}/set.sh"
 chmod +x /etc/set.sh
 history -c
 echo "1.2" > /home/ver

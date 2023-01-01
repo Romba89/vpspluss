@@ -125,4 +125,4 @@ rm -f setup.sh && sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ip
 ------------
 **Telegram**
 ------------
-[Senovpn](https://t.me/senovpn)
+[Senovpn](https://t.me/vpsplus71)

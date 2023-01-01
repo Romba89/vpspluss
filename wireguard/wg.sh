@@ -31,7 +31,7 @@ exit 0
 fi
 # ==================================================
 # Link Hosting Kalian
-mahboub="raw.githubusercontent.com/Romba89/vpspluss/main/wireguard"
+akbarvpn="raw.githubusercontent.com/Romba89/vpspluss/main/wireguard"
 
 # Check OS version
 if [[ -e /etc/debian_version ]]; then
@@ -116,9 +116,9 @@ WG_RUNNING=$?
 
 # Tambahan
 cd /usr/bin
-wget -O addwg "https://${mahboub}/addwg.sh"
-wget -O delwg "https://${mahboub}/delwg.sh"
-wget -O renewwg "https://${mahboub}/renewwg.sh"
+wget -O addwg "https://${akbarvpn}/addwg.sh"
+wget -O delwg "https://${akbarvpn}/delwg.sh"
+wget -O renewwg "https://${akbarvpn}/renewwg.sh"
 chmod +x addwg
 chmod +x delwg
 chmod +x renewwg

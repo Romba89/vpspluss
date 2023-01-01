@@ -27,7 +27,7 @@ echo -e "${NC}${LIGHT}Telegram : https://t.me/Akbar218"
 exit 0
 fi
 # Link Hosting Kalian
-mahboub="raw.githubusercontent.com/Romba89/vpspluss/main/shadowsocks"
+akbarvpn="raw.githubusercontent.com/Romba89/vpspluss/main/shadowsocks"
 
 source /etc/os-release
 OS=$ID
@@ -117,10 +117,10 @@ iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2443:3543 -j ACCEPT
 iptables-save > /etc/iptables.up.rules
 ip6tables-save > /etc/ip6tables.up.rules
 cd /usr/bin
-wget -O addss "https://${mahboub}/addss.sh"
-wget -O delss "https://${mahboub}/delss.sh"
-wget -O cekss "https://${mahboub}/cekss.sh"
-wget -O renewss "https://${mahboub}/renewss.sh"
+wget -O addss "https://${akbarvpn}/addss.sh"
+wget -O delss "https://${akbarvpn}/delss.sh"
+wget -O cekss "https://${akbarvpn}/cekss.sh"
+wget -O renewss "https://${akbarvpn}/renewss.sh"
 chmod +x addss
 chmod +x delss
 chmod +x cekss

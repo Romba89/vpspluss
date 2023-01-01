@@ -14,16 +14,16 @@ LIGHT='\033[0;37m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 # ==================================================
 # Link Hosting Kalian
-akbarvpn="raw.githubusercontent.com/senowahyu62/scriptvps/main/ssh"
+mahboub="raw.githubusercontent.com/Romba89/vpspluss/main/ssh"
 
 # Link Hosting Kalian Untuk Xray
-akbarvpnn="raw.githubusercontent.com/senowahyu62/scriptvps/main/xray"
+mahboub="raw.githubusercontent.com/Romba89/vpspluss/main/xray"
 
 # Link Hosting Kalian Untuk Trojan Go
-akbarvpnnn="raw.githubusercontent.com/senowahyu62/scriptvps/main/trojango"
+mahboub="raw.githubusercontent.com/Romba89/vpspluss/main/trojango"
 
 # Link Hosting Kalian Untuk Stunnel5
-akbarvpnnnn="raw.githubusercontent.com/senowahyu62/scriptvps/main/stunnel5"
+mahboub="raw.githubusercontent.com/Romba89/vpspluss/main/stunnel5"
 
 # initializing var
 export DEBIAN_FRONTEND=noninteractive
@@ -43,7 +43,7 @@ commonname=akbarstorevpn
 email=akbarssh21@gmail.com
 
 # simple password minimal
-wget -O /etc/pam.d/common-password "https://${akbarvpn}/password"
+wget -O /etc/pam.d/common-password "https://${mahboub}/password"
 chmod +x /etc/pam.d/common-password
 
 # go to root
@@ -142,8 +142,8 @@ echo "neofetch" >> .profile
 apt -y install nginx php php-fpm php-cli php-mysql libxml-parser-perl
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-curl https://${akbarvpn}/nginx.conf > /etc/nginx/nginx.conf
-curl https://${akbarvpn}/vps.conf > /etc/nginx/conf.d/vps.conf
+curl https://${mahboub}/nginx.conf > /etc/nginx/nginx.conf
+curl https://${mahboub}/vps.conf > /etc/nginx/conf.d/vps.conf
 sed -i 's/listen = \/var\/run\/php-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php/fpm/pool.d/www.conf
 useradd -m vps;
 mkdir -p /home/vps/public_html
@@ -151,13 +151,13 @@ echo "<?php phpinfo() ?>" > /home/vps/public_html/info.php
 chown -R www-data:www-data /home/vps/public_html
 chmod -R g+rw /home/vps/public_html
 cd /home/vps/public_html
-wget -O /home/vps/public_html/index.html "https://${akbarvpn}/index.html1"
+wget -O /home/vps/public_html/index.html "https://${mahboub}/index.html1"
 /etc/init.d/nginx restart
 cd
 
 # install badvpn
 cd
-wget -O /usr/bin/badvpn-udpgw "https://${akbarvpn}/badvpn-udpgw64"
+wget -O /usr/bin/badvpn-udpgw "https://${mahboub}/badvpn-udpgw64"
 chmod +x /usr/bin/badvpn-udpgw
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500' /etc/rc.local
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500' /etc/rc.local
@@ -187,7 +187,7 @@ echo "/usr/sbin/nologin" >> /etc/shells
 # install squid
 cd
 apt -y install squid3
-wget -O /etc/squid/squid.conf "https://${akbarvpn}/squid3.conf"
+wget -O /etc/squid/squid.conf "https://${mahboub}/squid3.conf"
 sed -i $MYIP2 /etc/squid/squid.conf
 
 # Install SSLH
@@ -243,7 +243,7 @@ rm -rf /root/vnstat-2.6
 
 # install stunnel 5 
 cd /root/
-wget -q -O stunnel5.zip "https://${akbarvpnnnn}/stunnel5.zip"
+wget -q -O stunnel5.zip "https://${mahboub}/stunnel5.zip"
 unzip -o stunnel5.zip
 cd /root/stunnel
 chmod +x configure
@@ -302,7 +302,7 @@ WantedBy=multi-user.target
 END
 
 # Service Stunnel5 /etc/init.d/stunnel5
-wget -q -O /etc/init.d/stunnel5 "https://${akbarvpnnnn}/stunnel5.init"
+wget -q -O /etc/init.d/stunnel5 "https://${mahboub}/stunnel5.init"
 
 # Ubah Izin Akses
 chmod 600 /etc/stunnel5/stunnel5.pem
@@ -327,7 +327,7 @@ systemctl restart stunnel5
 /etc/init.d/stunnel5 restart
 
 #OpenVPN
-wget https://${akbarvpn}/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
+wget https://${mahboub}/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
 
 # install fail2ban
 apt -y install fail2ban
@@ -364,10 +364,10 @@ echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 
 # Install BBR
-wget https://${akbarvpn}/bbr.sh && chmod +x bbr.sh && ./bbr.sh
+wget https://${mahboub}/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 
 # Ganti Banner
-wget -O /etc/issue.net "https://${akbarvpn}/issue.net"
+wget -O /etc/issue.net "https://${mahboub}/issue.net"
 
 # blockir torrent
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
@@ -388,66 +388,66 @@ netfilter-persistent reload
 
 # download script
 cd /usr/bin
-wget -O addhost "https://${akbarvpn}/addhost.sh"
-wget -O about "https://${akbarvpn}/about.sh"
-wget -O menu "https://raw.githubusercontent.com/senowahyu62/scriptvps/main/update/menu.sh"
-wget -O addssh "https://${akbarvpn}/addssh.sh"
-wget -O trialssh "https://${akbarvpn}/trialssh.sh"
-wget -O delssh "https://${akbarvpn}/delssh.sh"
-wget -O member "https://${akbarvpn}/member.sh"
-wget -O delexp "https://${akbarvpn}/delexp.sh"
-wget -O cekssh "https://${akbarvpn}/cekssh.sh"
-wget -O restart "https://${akbarvpn}/restart.sh"
-wget -O speedtest "https://${akbarvpn}/speedtest_cli.py"
-wget -O info "https://${akbarvpn}/info.sh"
-wget -O ram "https://${akbarvpn}/ram.sh"
-wget -O renewssh "https://${akbarvpn}/renewssh.sh"
-wget -O autokill "https://${akbarvpn}/autokill.sh"
-wget -O ceklim "https://${akbarvpn}/ceklim.sh"
-wget -O tendang "https://${akbarvpn}/tendang.sh"
-wget -O clearlog "https://${akbarvpn}/clearlog.sh"
-wget -O changeport "https://${akbarvpn}/changeport.sh"
-wget -O portovpn "https://${akbarvpn}/portovpn.sh"
-wget -O portwg "https://${akbarvpn}/portwg.sh"
-wget -O porttrojan "https://${akbarvpn}/porttrojan.sh"
-wget -O portsstp "https://${akbarvpn}/portsstp.sh"
-wget -O portsquid "https://${akbarvpn}/portsquid.sh"
-wget -O portvlm "https://${akbarvpn}/portvlm.sh"
-wget -O wbmn "https://${akbarvpn}/webmin.sh"
-wget -O xp "https://${akbarvpn}/xp.sh"
-wget -O swapkvm "https://${akbarvpn}/swapkvm.sh"
-wget -O addvmess "https://${akbarvpnn}/addv2ray.sh"
-wget -O addvless "https://${akbarvpnn}/addvless.sh"
-wget -O addtrojan "https://${akbarvpnn}/addtrojan.sh"
-wget -O delvmess "https://${akbarvpnn}/delv2ray.sh"
-wget -O delvless "https://${akbarvpnn}/delvless.sh"
-wget -O deltrojan "https://${akbarvpnn}/deltrojan.sh"
-wget -O cekvmess "https://${akbarvpnn}/cekv2ray.sh"
-wget -O cekvless "https://${akbarvpnn}/cekvless.sh"
-wget -O cektrojan "https://${akbarvpnn}/cektrojan.sh"
-wget -O renewvmess "https://${akbarvpnn}/renewv2ray.sh"
-wget -O renewvless "https://${akbarvpnn}/renewvless.sh"
-wget -O renewtrojan "https://${akbarvpnn}/renewtrojan.sh"
-wget -O certv2ray "https://${akbarvpnn}/certv2ray.sh"
-wget -O addtrgo "https://${akbarvpnnn}/addtrgo.sh"
-wget -O deltrgo "https://${akbarvpnnn}/deltrgo.sh"
-wget -O renewtrgo "https://${akbarvpnnn}/renewtrgo.sh"
-wget -O cektrgo "https://${akbarvpnnn}/cektrgo.sh"
-wget -O portsshnontls "https://raw.githubusercontent.com/senowahyu62/scriptvps/main/websocket/portsshnontls.sh"
-wget -O portsshws "https://raw.githubusercontent.com/senowahyu62/scriptvps/main/websocket/portsshws.sh"
+wget -O addhost "https://${mahboub}/addhost.sh"
+wget -O about "https://${mahboub}/about.sh"
+wget -O menu "https://raw.githubusercontent.com/Romba89/vpspluss/main/update/menu.sh"
+wget -O addssh "https://${mahboub}/addssh.sh"
+wget -O trialssh "https://${mahboub}/trialssh.sh"
+wget -O delssh "https://${mahboub}/delssh.sh"
+wget -O member "https://${mahboub}/member.sh"
+wget -O delexp "https://${mahboub}/delexp.sh"
+wget -O cekssh "https://${mahboub}/cekssh.sh"
+wget -O restart "https://${mahboub}/restart.sh"
+wget -O speedtest "https://${mahboub}/speedtest_cli.py"
+wget -O info "https://${mahboub}/info.sh"
+wget -O ram "https://${mahboub}/ram.sh"
+wget -O renewssh "https://${mahboub}/renewssh.sh"
+wget -O autokill "https://${mahboub}/autokill.sh"
+wget -O ceklim "https://${mahboub}/ceklim.sh"
+wget -O tendang "https://${mahboub}/tendang.sh"
+wget -O clearlog "https://${mahboub}/clearlog.sh"
+wget -O changeport "https://${mahboub}/changeport.sh"
+wget -O portovpn "https://${mahboub}/portovpn.sh"
+wget -O portwg "https://${mahboub}/portwg.sh"
+wget -O porttrojan "https://${mahboub}/porttrojan.sh"
+wget -O portsstp "https://${mahboub}/portsstp.sh"
+wget -O portsquid "https://${mahboub}/portsquid.sh"
+wget -O portvlm "https://${mahboub}/portvlm.sh"
+wget -O wbmn "https://${mahboub}/webmin.sh"
+wget -O xp "https://${mahboub}/xp.sh"
+wget -O swapkvm "https://${mahboub}/swapkvm.sh"
+wget -O addvmess "https://${mahboub}/addv2ray.sh"
+wget -O addvless "https://${mahboub}/addvless.sh"
+wget -O addtrojan "https://${mahboub}/addtrojan.sh"
+wget -O delvmess "https://${mahboub}/delv2ray.sh"
+wget -O delvless "https://${mahboub}/delvless.sh"
+wget -O deltrojan "https://${mahboub}/deltrojan.sh"
+wget -O cekvmess "https://${mahboub}/cekv2ray.sh"
+wget -O cekvless "https://${mahboub}/cekvless.sh"
+wget -O cektrojan "https://${mahboub}/cektrojan.sh"
+wget -O renewvmess "https://${mahboub}/renewv2ray.sh"
+wget -O renewvless "https://${mahboub}/renewvless.sh"
+wget -O renewtrojan "https://${mahboub}/renewtrojan.sh"
+wget -O certv2ray "https://${mahboub}/certv2ray.sh"
+wget -O addtrgo "https://${mahboub}/addtrgo.sh"
+wget -O deltrgo "https://${mahboub}/deltrgo.sh"
+wget -O renewtrgo "https://${mahboub}/renewtrgo.sh"
+wget -O cektrgo "https://${mahboub}/cektrgo.sh"
+wget -O portsshnontls "https://raw.githubusercontent.com/Romba89/vpspluss/main/websocket/portsshnontls.sh"
+wget -O portsshws "https://raw.githubusercontent.com/Romba89/vpspluss/main/websocket/portsshws.sh"
 
-wget -O sshovpnmenu "https://raw.githubusercontent.com/senowahyu62/scriptvps/main/update/sshovpn.sh"
-wget -O l2tpmenu "https://raw.githubusercontent.com/senowahyu62/scriptvps/main/update/l2tpmenu.sh"
-wget -O pptpmenu "https://raw.githubusercontent.com/senowahyu62/scriptvps/main/update/pptpmenu.sh"
-wget -O sstpmenu "https://raw.githubusercontent.com/senowahyu62/scriptvps/main/update/sstpmenu.sh"
-wget -O wgmenu "https://raw.githubusercontent.com/senowahyu62/scriptvps/main/update/wgmenu.sh"
-wget -O ssmenu "https://raw.githubusercontent.com/senowahyu62/scriptvps/main/update/ssmenu.sh"
-wget -O ssrmenu "https://raw.githubusercontent.com/senowahyu62/scriptvps/main/update/ssrmenu.sh"
-wget -O vmessmenu "https://raw.githubusercontent.com/senowahyu62/scriptvps/main/update/vmessmenu.sh"
-wget -O vlessmenu "https://raw.githubusercontent.com/senowahyu62/scriptvps/main/update/vlessmenu.sh"
-wget -O trmenu "https://raw.githubusercontent.com/senowahyu62/scriptvps/main/update/trmenu.sh"
-wget -O trgomenu "https://raw.githubusercontent.com/senowahyu62/scriptvps/main/update/trgomenu.sh"
-wget -O setmenu "https://raw.githubusercontent.com/senowahyu62/scriptvps/main/update/setmenu.sh"
+wget -O sshovpnmenu "https://raw.githubusercontent.com/Romba89/vpspluss/main/update/sshovpn.sh"
+wget -O l2tpmenu "https://raw.githubusercontent.com/Romba89/vpspluss/main/update/l2tpmenu.sh"
+wget -O pptpmenu "https://raw.githubusercontent.com/Romba89/vpspluss/main/update/pptpmenu.sh"
+wget -O sstpmenu "https://raw.githubusercontent.com/Romba89/vpspluss/main/update/sstpmenu.sh"
+wget -O wgmenu "https://raw.githubusercontent.com/Romba89/vpspluss/main/update/wgmenu.sh"
+wget -O ssmenu "https://raw.githubusercontent.com/Romba89/vpspluss/main/update/ssmenu.sh"
+wget -O ssrmenu "https://raw.githubusercontent.com/Romba89/vpspluss/main/update/ssrmenu.sh"
+wget -O vmessmenu "https://raw.githubusercontent.com/Romba89/vpspluss/main/update/vmessmenu.sh"
+wget -O vlessmenu "https://raw.githubusercontent.com/Romba89/vpspluss/main/update/vlessmenu.sh"
+wget -O trmenu "https://raw.githubusercontent.com/Romba89/vpspluss/main/update/trmenu.sh"
+wget -O trgomenu "https://raw.githubusercontent.com/Romba89/vpspluss/main/update/trgomenu.sh"
+wget -O setmenu "https://raw.githubusercontent.com/Romba89/vpspluss/main/update/setmenu.sh"
 
 
 chmod +x portsshnontls

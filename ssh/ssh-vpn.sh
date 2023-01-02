@@ -34,13 +34,13 @@ source /etc/os-release
 ver=$VERSION_ID
 
 #detail nama perusahaan
-country=ID
-state=Indonesia
-locality=Indonesia
-organization=akbarstorevpn
-organizationalunit=akbarstorevpn
-commonname=akbarstorevpn
-email=akbarssh21@gmail.com
+country=DE
+state=Berlin
+locality=Berlin
+organization=tunnelcatvpn
+organizationalunit=tunnelcatvpn
+commonname=tunnelcatvpn
+email=tunnelcatpro@gmail.com
 
 # simple password minimal
 wget -O /etc/pam.d/common-password "https://${akbarvpn}/password"

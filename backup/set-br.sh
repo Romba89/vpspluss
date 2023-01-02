@@ -36,8 +36,8 @@ account default
 host smtp.gmail.com
 port 587
 auth on
-user bckupvpns@gmail.com
-from bckupvpns@gmail.com
+user tunnelcatpro@gmail.com
+from tunnelcatpro@gmail.com
 password Yangbaru1 
 logfile ~/.msmtp.log
 EOF
